@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bharath Kumar V - Student Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Optional Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* TOP NAVBAR */
+        .top-bar {
+            width: 100%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #004aad;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #004aad;
+        }
+
+        .site-title {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO SECTION WITH BACKGROUND IMAGE */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background-image: url("header.jpg"); /* <-- PUT YOUR IMAGE FILE NAME HERE */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* light blur overlay like in screenshot */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255,255,255,0.55);
+        }
+
+        .hero-text {
+            position: relative;
+            font-size: 52px;
+            font-weight: 700;
+            color: red;
+            text-align: center;
+        }
+
+        /* SECTION TITLE BAR */
+        .section-header {
+            background-color: #b9c2c9; /* grey band like screenshot */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            color: #001f78;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ABOUT SECTION */
+        .about-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .about-photo {
+            flex: 0 0 260px;
+        }
+
+        .about-photo img {
+            width: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .about-text p + p {
+            margin-top: 10px;
+        }
+
+        .about-text strong {
+            font-weight: 700;
+        }
+
+        /* SUB SECTIONS LIKE SUBJECTS / PROJECTS */
+        .sub-section {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .sub-section h3 {
+            color: #001f78;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .sub-section ul {
+            margin-left: 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding: 15px 0 20px;
+            border-top: 1px solid #d0d0d0;
+            color: #555;
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .hero-text {
+                font-size: 32px;
+                padding: 0 10px;
+            }
+
+            .about-wrapper {
+                flex-direction: column;
+            }
+
+            .about-photo {
+                max-width: 260px;
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                margin: 5px 10px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <header class="top-bar">
+        <div class="logo-area">
+            <div class="logo-circle">BK</div>
+            <div class="site-title">Bharath Kumar V</div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#about">About The Student</a>
+            <a href="#cloud">Cloud Computing with AWS</a>
+            <a href="#os">Operating System</a>
+            <a href="#ai">AI & ML Lab</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            Welcome to Bharath's profile
+        </div>
+    </section>
+
+    <!-- SECTION TITLE BAR -->
+    <div class="section-header" id="about">
+        <h2>ABOUT THE STUDENT</h2>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-wrapper">
+        <div class="about-photo">
+            <!-- Replace this image with your own photo -->
+            <img src="bharath.jpg" alt="Photo of Bharath Kumar V">
+        </div>
+        <div class="about-text">
+            <p>
+                I, <strong>Bharath Kumar V</strong>, am currently pursuing my Bachelor’s degree in 
+                <strong>Electrical & Electronics Engineering (EEE)</strong>. I am passionate about 
+                <strong>cloud computing, web development, and artificial intelligence</strong>.
+            </p>
+            <p>
+                I actively work on improving my skills through online courses, hands-on projects, and 
+                real-world problem solving. My areas of interest include <strong>AWS Cloud, Python programming, 
+                 and Machine learning</strong>.
+            </p>
+            <p>
+                I enjoy collaborating with others, participating in technical events, and constantly 
+                learning new tools and technologies that prepare me for a career in the software and 
+                cloud industry.
+            </p>
+        </div>
+    </section>
+
+    <!-- CLOUD SECTION -->
+    <section class="sub-section" id="cloud">
+        <h3>Cloud Computing with AWS</h3>
+        <p>
+            I am currently learning AWS Cloud concepts and preparing for the 
+            <strong>AWS Cloud Practitioner</strong> certification. Some of the important topics I focus on are:
+        </p>
+        <ul>
+            <li>Core AWS services: EC2, S3, RDS, Lambda, IAM</li>
+            <li>Cloud concepts and global infrastructure</li>
+            <li>Security, identity and compliance on AWS</li>
+            <li>Billing, pricing and support plans</li>
+        </ul>
+    </section>
+
+    <!-- OPERATING SYSTEM SECTION -->
+    <section class="sub-section" id="os">
+        <h3>Operating System</h3>
+        <p>
+            I study the fundamentals of Operating Systems including:
+        </p>
+        <ul>
+            <li>Process management and CPU scheduling</li>
+            <li>Memory management and virtual memory</li>
+            <li>Deadlocks, synchronization and concurrency</li>
+            <li>File systems and storage management</li>
+        </ul>
+    </section>
+
+    <!-- AI / ML SECTION -->
+    <section class="sub-section" id="ai">
+        <h3>AI & ML Lab / Projects</h3>
+        <p>
+            I am interested in AI and Machine Learning and gradually building small projects such as:
+        </p>
+        <ul>
+            <li>Simple prediction models using Python</li>
+            <li>Data visualization and basic analytics</li>
+            <li>Exploring neural networks and deep learning frameworks</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="sub-section" id="contact">
+        <h3>Contact</h3>
+        <p>
+            You can reach me for collaboration, internships or project discussions:
+        </p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:Bharathkumar81627@gmail.com">Bharathkumar81627@gmail.com</a></li>
+            <li><strong>Phone:</strong> 7349041639</li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/bharathkumar81627" target="_blank">github.com/bharathkumar81627</a></li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        &copy; <span id="year"></span> Bharath Kumar V. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
